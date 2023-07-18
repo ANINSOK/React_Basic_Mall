@@ -2,8 +2,8 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      기능개발
+    <div className="AppTest">
+      기능개발 기능개발
     </div>
   );
 }
