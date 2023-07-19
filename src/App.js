@@ -1,11 +1,12 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Nav, Navbar, Row, Col} from "react-bootstrap";
-import productData from "./data";
+import { Routes, Route } from 'react-router-dom'
 import { useState } from "react";
 
 // @@@ 서버에서 가져왔다고 치고 여긴 서버임
-
+import productData from "./data";
+import detail from "./components/detail";
 // @@@ 서버에서 가져왔다고 치고 여긴 서버임
 
 function App() {
@@ -19,17 +20,24 @@ function App() {
           <Container>
             <Navbar.Brand href="/">NoMall</Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link href="detail">상세페이지</Nav.Link>
-              <Nav.Link href="#features">Features</Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
+              <Nav.Link href="/detail">상세페이지</Nav.Link>
             </Nav>
           </Container>
         </Navbar>
       </>
 
-      <div className="main-bg"></div>
 
-      <ProductList Data = {Data}/>
+
+      <Routes>
+        <Route path = "/" element={
+          <>
+          <div className="main-bg"></div>
+          <ProductList Data = {Data}/>
+          </>
+          }/>
+        <Route path = "/detail" element={ <div>상세페이지임</div> }/>
+        <Route path = "/about" element={ <div>어바웃페이지임</div> }/>
+      </Routes>
 
     </div>
   );
