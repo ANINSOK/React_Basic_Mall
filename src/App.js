@@ -63,7 +63,7 @@ function ProductList(props) {
     <Container>
       <Row>
         {props.Data.map((item) => (
-          <Col key={item.id} xs={6} md={4}>
+          <Col key={item.id} xs={6} md={4} path = "/detail">
             <img src={`https://codingapple1.github.io/shop/shoes${item.id + 1}.jpg`} width="80%" alt=""/>
             <h4>{props.Data[item.id].title}</h4>
             <p>{props.Data[item.id].price}원</p>
